@@ -15,6 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Kalam&display=swap" rel="stylesheet" />
     <title>Pizzeria Pizze il Napolitano</title>
+    <link rel="stylesheet" href="css/all.css">
     <link rel="stylesheet" href="css/styles.css" />
 </head>
 
@@ -51,6 +52,9 @@
                             <time>23/05/2022</time>
                         </figcaption>
                     </figure>
+                    <button class="button" value="1">
+                        Añadir al carro <span class="fa-solid fa-cart-plus"></span>
+                    </button>
                 </div>
             </li>
             <li>
@@ -66,6 +70,9 @@
                             <time>23/05/2022</time>
                         </figcaption>
                     </figure>
+                    <button class="button" value="2">
+                        Añadir al carro <span class="fa-solid fa-cart-plus"></span>
+                    </button>
                 </div>
             </li>
             <li>
@@ -81,6 +88,9 @@
                             <time>23/05/2022</time>
                         </figcaption>
                     </figure>
+                    <button class="button" value="3">
+                        Añadir al carro <span class="fa-solid fa-cart-plus"></span>
+                    </button>
                 </div>
             </li>
             <li>
@@ -96,6 +106,9 @@
                             <time>23/05/2022</time>
                         </figcaption>
                     </figure>
+                    <button class="button" value="4">
+                        Añadir al carro <span class="fa-solid fa-cart-plus"></span>
+                    </button>
                 </div>
             </li>
             <li>
@@ -111,6 +124,9 @@
                             <time>23/05/2022</time>
                         </figcaption>
                     </figure>
+                    <button class="button" value="5">
+                        Añadir al carro <span class="fa-solid fa-cart-plus"></span>
+                    </button>
                 </div>
             </li>
             <li>
@@ -126,6 +142,9 @@
                             <time>23/05/2022</time>
                         </figcaption>
                     </figure>
+                    <button class="button" value="6">
+                        Añadir al carro <span class="fa-solid fa-cart-plus"></span>
+                    </button>
                 </div>
 
             </li>
@@ -134,6 +153,17 @@
     <footer>
         <p>&copy;2022</p>
     </footer>
+    <script>
+        var cantidadBotones = document.querySelectorAll("button").length;
+        for (var i = 0; i < cantidadBotones; i++) {
+            document.querySelectorAll("button")[i].addEventListener("click", showValue);
+        }
+
+        function showValue() {
+            console.log(this.value)
+            alert("elegiste la pizza numero " + this.value)
+        }
+    </script>
 </body>
 
 </html>
