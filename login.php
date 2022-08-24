@@ -25,13 +25,14 @@ $pass = $_POST['password'];
 $hashed_pass = hash('sha256', $pass);
 
 include_once "config_login.php";
-function openCon()
+include_once "db.php";
+/*function openCon()
 {
     $dsn = "mysql:dbname=" . DATABASE_NAME . ";host=" . SERVER_NAME;
     $link = new PDO($dsn, USER_NAME, PASSWORD);
     return $link;
-}
-$link = openCon();
+}*/
+$link = new Db();
 $sql = "select * from users where (username=:usr or email=:usr) and (password=:hashed_pass) and (active='si')";
 $stmt = $link->prepare($sql);
 $stmt->bindValue(':usr', $usr);
