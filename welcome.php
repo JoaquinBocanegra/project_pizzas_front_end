@@ -47,12 +47,12 @@ else{
 ?>
 <br>
 <br>
-<a href="inser_products.php" class="btn btn-primary">Ingresar Producto</a>
+<a href="insert_products.php" class="btn btn-primary">Ingresar Producto</a>
 <br>
 <?php
 
-include_once"config_products.php";
-include_once"db.php";
+include_once("config_products.php");
+include_once("db.php");
 
 $link=new Db();/*Objeto*/
 $sql="SELECT p.id_product, p.product_name, p.price, date_format(p.start_date,'%d/%m/%Y') as date , c.category_name from products p inner join categories c on c.id_category=p.id_category order by c.category_name asc;";
