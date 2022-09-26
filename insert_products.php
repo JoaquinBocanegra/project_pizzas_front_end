@@ -40,8 +40,30 @@
             <div class="form-group">
                 <br>
                 <label class="control-label" for="categoria">Categoria</label>
-                <select id="categoria" name="categoria" class="form-control" ></select>
+                <select id="categoria" name="categoria" class="form-control" >
+                <?php 
+                include_once("config_products.php");
+                include_once("db.php");
                 
+                $link=new Db();
+                  $sql="SELECT id_category, category_name from categories order by category_name; ";
+                  $stmt = $link->prepare($sql);
+                  $stmt->execute();
+                  $data=$stmt->fetchAll();
+                  foreach($data as $row){
+                    echo '<option value="'. $row['id_category'].'">'.$row['category_name']."</option>";
+                  }
+                ?>
+                </select>
+            </div>
+            <div class="form-group">
+                <br>
+                <label class="control-label" for="file">Seleccione la imagen del producto</label>
+                <input type="file" id="imagen" class="form-control" name="imagen" size="30">
+            </div>
+            <div class="text-center">
+                <br>
+             <input type="submit" class="btn btn-success" value="Añadir producto">
             </div>
         </form>
       </div>
