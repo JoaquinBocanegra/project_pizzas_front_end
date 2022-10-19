@@ -30,6 +30,9 @@
           }
         });        
       }
+      function updateProduct(cod){
+          window.location="edit.php?q="+ cod;
+      }
       </script>
 </head>
 <body>
@@ -48,6 +51,8 @@ else{
 <br>
 <br>
 <a href="insert_products.php" class="btn btn-primary">Ingresar Producto</a>
+
+<a href="insert_category.php" class="btn btn-primary">Ingresar categoria nueva</a>
 <br>
 <?php
 
