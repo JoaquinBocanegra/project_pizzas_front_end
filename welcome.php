@@ -107,6 +107,11 @@ foreach($data as $row)
   }
   echo "</tbody>";
   echo "</table>";
+  $stmt= $link->query("SELECT count(*) FROM products");
+  $rows=$stmt->fetchColumn();
+  echo "<div class='font-weight-bold'>";
+  echo $rows . " productos en total";
+  echo "</div>";
   ?>
 
 
